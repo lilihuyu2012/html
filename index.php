@@ -4,10 +4,10 @@ $redis = new Redis();
 $redis->connect('127.0.0.1',6379);
 
 
-
-$redis->lpush('list','a');
-$redis->lpush('list','b');
-$redis->lpush('list','c');
+$redis->delete('list');
+$redis->rpush('list','a');
+$redis->rpush('list','b');
+$redis->rpush('list','c');
 
 echo $redis->lpop('list');die;
 
